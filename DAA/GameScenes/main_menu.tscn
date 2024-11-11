@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfrhg4np8odyf"]
+[gd_scene load_steps=8 format=3 uid="uid://cfrhg4np8odyf"]
 
 [ext_resource type="Script" path="res://Scriptes/MainMenuButtons.cs" id="1_b4pqc"]
 [ext_resource type="Texture2D" uid="uid://bku7nckvhn8c7" path="res://Content/Sprites/BackGround.jpg" id="2_0q2fg"]
+[ext_resource type="Script" path="res://Scriptes/OptionsMenu.cs" id="3_clcjl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdis3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lonmt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yb3f7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_644ig"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,6 +81,37 @@ position = Vector2(953.5, 538)
 scale = Vector2(1.50234, 1.5)
 texture = ExtResource("2_0q2fg")
 
+[node name="OptionsMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -233.0
+offset_right = 226.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_clcjl")
+
+[node name="Label" type="Label" parent="OptionsMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Настройки "
+
+[node name="BackToMainMenu" type="Button" parent="OptionsMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_644ig")
+text = "Вернуться"
+flat = true
+
 [connection signal="pressed" from="MainMenuButtons/PlayButton" to="MainMenuButtons" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/OptionsButton" to="MainMenuButtons" method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenuButtons/OptionsButton" to="OptionsMenu" method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/QuitButton" to="MainMenuButtons" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackToMainMenu" to="MainMenuButtons" method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackToMainMenu" to="OptionsMenu" method="_on_back_to_main_menu_pressed"]

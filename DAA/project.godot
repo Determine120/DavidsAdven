@@ -18,7 +18,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Content/Sprites/logo.png"
 
 [display]
 
@@ -36,4 +36,5 @@ theme/custom_font="res://Content/Fonts/ComicSansMS/Comic Sans MS.ttf"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
