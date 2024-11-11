@@ -75,7 +75,7 @@ text = "Выйти"
 flat = true
 
 [node name="BackGround" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.32549)
+self_modulate = Color(0.369563, 0, 0.0477031, 1)
 z_index = -1
 position = Vector2(953.5, 538)
 scale = Vector2(1.50234, 1.5)
